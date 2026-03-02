@@ -24,6 +24,10 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   line-height: 1.6;
+  cursor: none;
+}
+a, button, .btn-primary, .btn-secondary {
+  cursor: none;
 }
 
 /* Global Button Style */

@@ -7,10 +7,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import AOS from 'aos';
 import { ParticlesComponent } from './components/particles/particles.component';
+import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeroComponent,ExperienceComponent,ProjectsComponent,ContactComponent,NavbarComponent,ParticlesComponent],
+  imports: [HeroComponent,ExperienceComponent,ProjectsComponent,ContactComponent,NavbarComponent,ParticlesComponent,CustomCursorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
