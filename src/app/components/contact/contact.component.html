@@ -1,12 +1,30 @@
 <section id="contact" class="contact-container" data-aos="zoom-in">
-  <h2 class="section-title"><span>03.</span> What's Next?</h2>
+  <h2 class="section-title"><span>04.</span> What's Next?</h2>
   <h3 class="title">Get In Touch</h3>
   
   <p class="desc">
-    I'm currently open to new opportunities and collaborations. 
-    Whether you have a question, a project idea, or just want to say hi, 
-    my inbox is always open. I'll try my best to get back to you!
+    I'm currently open to new opportunities. Whether you have a question, 
+    a project idea, or just want to say hi, my inbox is always open!
   </p>
   
-  <a [href]="'mailto:' + email" class="btn-primary">Say Hello</a>
+  <div class="form-wrapper">
+    <form (submit)="onSubmit($event)" class="contact-form">
+      <div class="input-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="input-group">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn-primary submit-btn" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Sending...' : 'Say Hello' }}
+      </button>
+
+      <p *ngIf="successMessage" class="status-msg success">{{ successMessage }}</p>
+      <p *ngIf="errorMessage" class="status-msg error">{{ errorMessage }}</p>
+    </form>
+  </div>
 </section>

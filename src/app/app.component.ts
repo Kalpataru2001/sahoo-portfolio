@@ -8,10 +8,20 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import AOS from 'aos';
 import { ParticlesComponent } from './components/particles/particles.component';
 import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
+import { EducationComponent } from './components/education/education.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeroComponent,ExperienceComponent,ProjectsComponent,ContactComponent,NavbarComponent,ParticlesComponent,CustomCursorComponent],
+  imports: [
+    HeroComponent,
+    ExperienceComponent,
+    ProjectsComponent, 
+    ContactComponent, 
+    NavbarComponent, 
+    ParticlesComponent, 
+    CustomCursorComponent,
+    EducationComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -20,10 +30,10 @@ export class AppComponent {
   constructor() {
     afterNextRender(() => {
       AOS.init({
-        duration: 800,   
-        easing: 'ease-in-out', 
-        once: true,     
-        offset: 100     
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
       });
     });
   }

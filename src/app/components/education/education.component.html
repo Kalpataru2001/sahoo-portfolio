@@ -1,0 +1,40 @@
+<section id="education" class="section-container">
+  <h2 class="section-title" data-aos="fade-right"><span>03.</span> Education & Certifications</h2>
+
+  <div class="content-grid">
+    <div class="timeline-container" data-aos="fade-up">
+      <h3 class="sub-title">Academics</h3>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let edu of educationList; let i = index">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4 class="degree">{{ edu.degree }}</h4>
+            <p class="institution">{{ edu.institution }}</p>
+            <div class="meta-info" *ngIf="edu.year || edu.score">
+              <span class="year" *ngIf="edu.year">📅 {{ edu.year }}</span>
+              <span class="score" *ngIf="edu.score">🏆 {{ edu.score }}</span>
+            </div>
+            
+            <a *ngIf="edu.certificateUrl" [href]="edu.certificateUrl" target="_blank" class="edu-cert-link">
+              🔗 View Certificate
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="certifications-container" data-aos="fade-left" data-aos-delay="200">
+      <h3 class="sub-title">Licenses & Certifications</h3>
+      <div class="badges-grid">
+        
+        <a [href]="cert.url" target="_blank" class="cert-badge" *ngFor="let cert of certifications">
+          <span class="check-icon">✓</span>
+          <p>{{ cert.name }}</p>
+          <span class="external-icon">↗</span>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</section>

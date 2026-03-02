@@ -1,0 +1,153 @@
+.section-container {
+  padding: 100px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  span { color: var(--accent-color); font-size: 1.5rem; margin-right: 10px; font-family: monospace; }
+  &::after { content: ""; flex-grow: 1; height: 1px; background-color: #233554; margin-left: 20px; }
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+}
+
+.sub-title {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* Timeline Styles */
+.timeline {
+  border-left: 2px solid #233554;
+  padding-left: 30px;
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -37px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.degree {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.institution {
+  color: var(--accent-color);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.meta-info {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-family: monospace;
+
+  span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+}
+
+/* Certification Badges */
+.badges-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cert-badge {
+ text-decoration: none; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  display: flex;
+  background: rgba(17, 34, 64, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  .check-icon {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  &:hover {
+    transform: translateX(10px);
+    border-color: rgba(0, 229, 255, 0.3);
+    background: rgba(17, 34, 64, 0.8);
+    
+    p { color: var(--text-primary); }
+  }
+  .external-icon {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  &:hover .external-icon {
+    color: var(--accent-color);
+    transform: translate(3px, -3px); /* Makes the arrow point up and right */
+  }
+}
+
+/* Style for the Education Certificate Link */
+.edu-cert-link {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .content-grid { grid-template-columns: 1fr; }
+}
