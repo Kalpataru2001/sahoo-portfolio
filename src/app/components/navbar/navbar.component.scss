@@ -1,0 +1,61 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(15, 17, 21, 0.85); /* Matches your dark theme */
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+.logo a {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid var(--accent-color);
+  padding: 5px 14px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 229, 255, 0.1);
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  a:not(.resume-btn) {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    span {
+      color: var(--accent-color);
+      margin-right: 5px;
+      font-family: monospace;
+    }
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  .resume-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; /* In a real app, you'd add a hamburger menu here */ }
+}

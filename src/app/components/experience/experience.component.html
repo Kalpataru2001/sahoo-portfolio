@@ -1,0 +1,32 @@
+<section id="experience" class="section-container">
+  <h2 class="section-title"><span>01.</span> Experience & Skills</h2>
+
+  <div class="content-grid" data-aos="fade-up">
+    <div class="experience-list">
+      <div class="job-item">
+        <h3 class="job-title">Package App Developer Associate <span class="company">&#64; Accenture</span></h3>
+        <p class="job-date">Incoming</p>
+        <p class="job-desc">Preparing to join the team to develop and maintain enterprise-level packaged applications.</p>
+      </div>
+
+      <div class="job-item">
+        <h3 class="job-title">Junior Software Engineer <span class="company">&#64; Kalpita Technology</span></h3>
+        <p class="job-date">Jan 2024 - Present</p>
+        <ul class="job-duties">
+          <li>Leading development on the CRM project and NFP MyDeferral platform.</li>
+          <li>Building secure, streamlined digital processing applications using ASP.NET, Angular, SQL, and Azure.</li>
+          <li>Improving data acquisition and administrative operations for banking and insurance clients.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skills-matrix" data-aos="fade-left" data-aos-delay="200">
+      <div class="skill-category" *ngFor="let group of skills">
+        <h4>{{ group.category }}</h4>
+        <div class="skill-tags">
+          <span class="tag" *ngFor="let skill of group.items">{{ skill }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
