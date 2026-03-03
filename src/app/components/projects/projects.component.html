@@ -1,8 +1,13 @@
 <section id="projects" class="section-container">
     <h2 class="section-title"><span>02.</span> Some Things I've Built</h2>
-
+    <div class="filter-bar" data-aos="fade-up">
+        <button *ngFor="let filter of filters" class="filter-btn" [class.active]="activeFilter() === filter"
+            (click)="setFilter(filter)">
+            {{ filter }}
+        </button>
+    </div>
     <div class="projects-grid">
-        <div class="project-card" *ngFor="let project of projects; let i = index" data-aos="fade-up"
+        <div class="project-card" *ngFor="let project of filteredProjects(); let i = index" data-aos="fade-up"
             [attr.data-aos-delay]="i * 100">
             <div class="project-content">
                 <div class="project-top">
