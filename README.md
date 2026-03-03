@@ -1,59 +1,63 @@
-# SahooPortfolio
+# 🚀 Kalpataru Sahoo | Fullstack Developer Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+A modern, highly interactive personal portfolio built from scratch to showcase my journey, projects, and technical expertise as a Fullstack Developer. 
 
-## Development server
+🔗 **[View Live Portfolio Here](https://Kalpataru2001.github.io/sahoo-portfolio/)**
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## ✨ Key Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This project was built without relying on heavy UI component libraries, focusing instead on deep framework knowledge and custom CSS/Canvas engineering:
 
-## Code scaffolding
+* **Angular 19 Architecture:** Utilizes the latest Standalone Components and the new declarative Control Flow syntax (`@if`, `@for`).
+* **Lightning-Fast State Management:** Implements Angular **Signals** (`signal`, `computed`) for instant, reactive project filtering (Frontend / Backend / Fullstack).
+* **Custom Particle Engine:** Features a bespoke, lightweight HTML5 Canvas particle network that reacts to mouse movement, engineered using Angular's `NgZone` and `afterNextRender` to run completely outside the change detection cycle for maximum 60fps performance.
+* **Bespoke UI/UX:** * Custom-built glowing cursor with smooth trailing physics.
+    * Responsive Glassmorphism design system.
+    * Seamless Light/Dark Mode toggle utilizing `localStorage` and dynamic CSS variables.
+* **Scroll-Reveal Animations:** Integrated AOS (Animate On Scroll) for premium, staggered fade-in effects.
+* **Serverless Contact Form:** Fully functional contact routing via Formspree API.
+* **Production Ready:** Fully optimized with SEO Meta Tags, Open Graph social sharing previews, and Google Analytics tracking.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Tech Stack
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+* **Framework:** Angular 19 (TypeScript)
+* **Styling:** SCSS (CSS Grid, Flexbox, CSS Variables)
+* **Animations:** Canvas API, CSS Transitions, AOS Library
+* **Deployment:** GitHub Pages (`angular-cli-ghpages`)
+* **Analytics:** Google Analytics (gtag.js)
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 💻 Local Setup & Development
 
-To build the project run:
+To run this project locally on your machine:
 
-```bash
-ng build
-```
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Kalpataru2001/sahoo-portfolio.git](https://github.com/Kalpataru2001/sahoo-portfolio.git)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+2. **Navigate into the directory:**
+   ```bash
+    cd sahoo-portfolio
 
-## Running unit tests
+3. **Install dependencies:**
+   ```bash
+    npm install
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+4. **Start the development server:**
+   ```bash
+    ng serve
+5. **Open your browser and navigate to http://localhost:4200/**
 
-```bash
-ng test
-```
+📬 Let's Connect
+I am currently building scalable CRM platforms and secure digital applications, and I am always open to discussing new opportunities, system architecture, or web technologies.
 
-## Running end-to-end tests
+LinkedIn: linkedin.com/in/kalpatarusahoo
 
-For end-to-end (e2e) testing, run:
+GitHub: github.com/Kalpataru2001
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+LeetCode: leetcode.com/u/Kalpataru_sahoo/

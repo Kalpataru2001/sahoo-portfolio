@@ -2,10 +2,10 @@
 @import 'aos/dist/aos.css';
 
 :root {
-  --bg-color: #0f1115; /* Deep dark background */
+  --bg-color: #0f1115; 
   --text-primary: #ffffff;
   --text-secondary: #a0aab2;
-  --accent-color: #00e5ff; /* Electric Cyan */
+  --accent-color: #00e5ff; 
   --accent-hover: #00b8cc;
 }
 
@@ -30,7 +30,17 @@ a, button, .btn-primary, .btn-secondary {
   cursor: none;
 }
 
-/* Global Button Style */
+.section-container {
+  padding: 100px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 60px 5%; 
+  }
+}
 .btn-primary {
   display: inline-block;
   padding: 12px 28px;
@@ -50,11 +60,10 @@ a, button, .btn-primary, .btn-secondary {
   }
 }
 
-/* Secondary Button Style */
 .btn-secondary {
   display: inline-block;
   padding: 12px 28px;
-  background-color: rgba(0, 229, 255, 0.1); /* Light tint of your accent color */
+  background-color: rgba(0, 229, 255, 0.1); 
   color: var(--text-primary);
   border: 1px solid rgba(0, 229, 255, 0.5);
   border-radius: 6px;
@@ -66,5 +75,46 @@ a, button, .btn-primary, .btn-secondary {
   &:hover {
     background-color: rgba(0, 229, 255, 0.2);
     border-color: var(--accent-color);
+  }
+}
+
+body.light-theme {
+  --bg-color: #f3f4f6; 
+  --text-primary: #1e293b; 
+  --text-secondary: #475569; 
+  --accent-color: #0284c7; 
+  --accent-hover: #0369a1;
+
+  .project-card, .form-wrapper, .cert-badge {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-card:hover {
+    box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.2);
+    border: 1px solid rgba(2, 132, 199, 0.3);
+  }
+
+  .input-group input, .input-group textarea {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+  }
+
+
+  .timeline-dot {
+    background-color: var(--bg-color);
+  }
+
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-secondary);
+    
+    &.active {
+      background: rgba(2, 132, 199, 0.1);
+      border-color: var(--accent-color);
+    }
   }
 }

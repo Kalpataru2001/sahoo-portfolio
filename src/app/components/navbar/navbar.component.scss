@@ -56,6 +56,75 @@
   }
 }
 
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  margin-right: 15px; 
+
+  &:hover {
+    background: rgba(0, 229, 255, 0.1);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+  }
+
+  svg {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &:active svg {
+    transform: scale(0.7) rotate(45deg);
+  }
+}
+
+:host-context(body.light-theme) .theme-toggle {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-secondary);
+  
+  &:hover {
+    background: rgba(2, 132, 199, 0.1);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(2, 132, 199, 0.15);
+  }
+}
+
+:host-context(body.light-theme) .navbar {
+  background-color: rgba(243, 244, 246, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 768px) {
-  .nav-links { display: none; /* In a real app, you'd add a hamburger menu here */ }
+  .navbar {
+    padding: 15px 5%; /* Reduces the side padding */
+  }
+
+  .nav-links {
+    gap: 12px; /* Tightens the gap between links */
+
+    a {
+      font-size: 0.85rem;
+      
+      span { 
+        display: none; /* Hides the "01." to save horizontal space */
+      }
+    }
+  }
+
+  .resume-btn {
+    padding: 6px 12px; /* Shrinks the button slightly */
+    font-size: 0.85rem;
+  }
 }
