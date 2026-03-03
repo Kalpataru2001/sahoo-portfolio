@@ -1,0 +1,167 @@
+.section-title {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  span { color: var(--accent-color); font-size: 1.2rem; margin-right: 10px; font-family: monospace; }
+  &::after { content: ""; flex-grow: 1; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin-left: 20px; }
+}
+
+.showcase-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  min-height: 450px;
+}
+
+/* --- Left Side: Typography Menu --- */
+.showcase-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 0;
+  
+  .nav-number {
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-right: 20px;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+  }
+
+  .nav-text {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    /* This makes the text hollow (transparent inside, stroke outside) */
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-secondary);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+  }
+
+  .nav-line {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    height: 2px;
+    width: 0;
+    background-color: var(--accent-color);
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  /* --- What happens when hovered/active --- */
+  &.active, &:hover {
+    .nav-number {
+      opacity: 1;
+      color: var(--accent-color);
+    }
+    .nav-text {
+      /* Fills the text with solid color and slides it right */
+      color: var(--text-primary);
+      -webkit-text-stroke: 0px;
+      transform: translateX(30px);
+      text-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    }
+    .nav-line {
+      /* Shoots a neon line through the text */
+      width: 120%;
+      box-shadow: 0 0 10px var(--accent-color);
+    }
+  }
+}
+
+/* --- Right Side: The Glass Stage --- */
+.showcase-stage {
+  flex: 1.2;
+  height: 400px;
+  background: rgba(17, 34, 64, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  border-radius: 24px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 30px rgba(0, 229, 255, 0.02), 0 20px 40px -10px rgba(2, 12, 27, 0.8);
+}
+
+.stage-watermark {
+  position: absolute;
+  right: -20px;
+  bottom: -40px;
+  font-size: 15rem;
+  opacity: 0.05;
+  filter: grayscale(100%);
+  pointer-events: none;
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+.stage-foreground {
+  position: relative;
+  z-index: 1;
+  
+  .stage-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.3));
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .stage-title {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  .stage-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+}
+
+/* Animation for the icon when you change tabs */
+@keyframes popIn {
+  0% { transform: scale(0.5) rotate(-15deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .showcase-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .showcase-menu { width: 100%; }
+  
+  .menu-item .nav-text {
+    font-size: 1.5rem;
+  }
+  
+  .showcase-stage {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+  }
+  
+  .stage-watermark { font-size: 10rem; right: -10px; bottom: -10px; }
+}

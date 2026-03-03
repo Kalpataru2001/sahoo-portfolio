@@ -10,6 +10,7 @@ import { ParticlesComponent } from './components/particles/particles.component';
 import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 import { EducationComponent } from './components/education/education.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HobbiesComponent } from './components/hobbies/hobbies.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ParticlesComponent, 
     CustomCursorComponent,
     EducationComponent,
-    FooterComponent
+    FooterComponent,
+    HobbiesComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
