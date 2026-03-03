@@ -1,0 +1,92 @@
+/* --- Full Screen Overlay --- */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a192f; /* Deep dark tech blue */
+  z-index: 99999; /* Keeps it above ABSOLUTELY everything else */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+
+  /* This class is added via Angular to trigger the fade out */
+  &.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* --- Terminal Box --- */
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+
+/* Syntax Highlighting Colors */
+.keyword { color: #c678dd; } /* Purple */
+.string { color: #98c379; }  /* Green */
+.function { color: #e5c07b; } /* Yellow */
+.method { color: #61afef; }   /* Blue */
+
+.code-line {
+  color: #abb2bf;
+}
+
+/* Terminal Typing Effect */
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid transparent;
+  width: 0;
+  animation: typing 1s steps(20, end) forwards;
+  animation-delay: 0.5s; /* Starts half a second after the page loads */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Blinking Cursor */
+.blink {
+  color: var(--accent-color);
+  animation: blinker 1s step-end infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+/* --- The Progress Bar --- */
+.progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+  /* Fills from 0 to 100% over 1.5 seconds */
+  animation: loadProgress 1.5s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+@keyframes loadProgress {
+  0% { width: 0%; }
+  30% { width: 40%; }
+  60% { width: 60%; }
+  100% { width: 100%; }
+}

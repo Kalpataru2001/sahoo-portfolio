@@ -1,0 +1,27 @@
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 4px; /* A very thin, elegant line */
+  background: transparent;
+  z-index: 9999; /* Keeps it above the navbar */
+  pointer-events: none; /* Ensures it doesn't block the user from clicking the top of the browser */
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%; /* Starts at 0, updated by Angular */
+  background: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color), 0 0 5px var(--accent-color);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  
+  /* Adds a tiny bit of smoothness to the filling animation */
+  transition: width 0.1s ease-out; 
+}
+
+/* Light mode override so it still looks great */
+:host-context(body.light-theme) .progress-bar {
+  box-shadow: 0 0 8px rgba(2, 132, 199, 0.5);
+}

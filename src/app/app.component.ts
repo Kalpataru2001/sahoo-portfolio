@@ -11,6 +11,8 @@ import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.
 import { EducationComponent } from './components/education/education.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HobbiesComponent } from './components/hobbies/hobbies.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { ScrollProgressComponent } from './components/scroll-progress/scroll-progress.component';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +26,9 @@ import { HobbiesComponent } from './components/hobbies/hobbies.component';
     CustomCursorComponent,
     EducationComponent,
     FooterComponent,
-    HobbiesComponent
+    HobbiesComponent,
+    LoaderComponent,
+    ScrollProgressComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
