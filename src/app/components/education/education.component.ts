@@ -15,7 +15,7 @@ export class EducationComponent {
       institution: 'Jspiders Training & Development Center, Marathahalli, Bengaluru',
       year: '',
       score: '',
-      certificateUrl: 'https://your-jspiders-certificate-link.com' 
+      certificateUrl: 'jspider.jpg'
     },
     {
       degree: 'Master of Computer Applications (MCA)',
