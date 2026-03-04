@@ -33,4 +33,15 @@ export class NavbarComponent implements OnInit{
       localStorage.setItem('theme', 'light');
     }
   }
+  scrollTo(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Offset by 80px so the navbar doesn't cover the section title!
+      const y = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      
+      // If you have a variable that controls your mobile menu, set it to false here!
+      // this.isMenuOpen = false; 
+    }
+  }
 }
