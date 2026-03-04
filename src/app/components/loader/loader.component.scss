@@ -2,10 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0a192f; 
-  z-index: 99999; 
+  right: 0;   /* Add this */
+  bottom: 0;  /* Add this */
+  width: 100%;
+  height: 100%;
+  background-color: #0a192f;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;

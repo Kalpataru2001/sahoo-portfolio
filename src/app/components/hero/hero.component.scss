@@ -32,7 +32,7 @@
   line-height: 1.2;
   margin-bottom: 20px;
   color: var(--text-primary);
-  white-space: nowrap;
+//   white-space: nowrap;
 
   .highlight {
     color: var(--accent-color);
@@ -154,11 +154,11 @@
 /* --- Mobile Responsiveness --- */
 @media (max-width: 1024px) {
   .hero-container {
-    flex-direction: column-reverse; /* Stacks image on top, text below */
+   flex-direction: column-reverse; 
     justify-content: center;
     text-align: center;
-    padding-top: 100px; /* Space for the navbar */
-    gap: 40px;
+    padding: 100px 5% 40px 5%; /* Tightened padding for mobile */
+    gap: 30px;
   }
 
   .content {
@@ -168,13 +168,16 @@
   }
 
   .blob-profile {
-    width: 280px; /* Shrinks the image for smaller screens */
-    height: 280px;
+   width: 220px; /* Shrunk image to save vertical space */
+    height: 220px;
   }
 
   .headline {
-    font-size: 2.8rem;
+    font-size: 2.2rem; /* Much smaller headline */
     margin-bottom: 15px;
+  }
+  .typing-text {
+    font-size: 1.8rem; /* Shrunk typing effect so it fits on one line */
   }
   
   .greeting {
