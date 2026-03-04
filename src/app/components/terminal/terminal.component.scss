@@ -1,0 +1,108 @@
+.section-title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+
+  span { color: var(--accent-color); font-size: 1.5rem; margin-right: 10px; font-family: monospace; }
+  &::after { content: ""; flex-grow: 1; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin-left: 20px; }
+}
+
+.terminal-window {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #0a192f;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: text; /* Makes the whole box feel clickable */
+}
+
+/* --- Fake macOS Header --- */
+.terminal-header {
+  background: #112240;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+
+    span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .close { background: #ff5f56; }
+    .minimize { background: #ffbd2e; }
+    .maximize { background: #27c93f; }
+  }
+
+  .title {
+    flex-grow: 1;
+    text-align: center;
+    color: var(--text-secondary);
+    font-family: monospace;
+    font-size: 0.85rem;
+    margin-right: 40px; /* Balances the absolute buttons on the left */
+  }
+}
+
+/* --- Terminal Body --- */
+.terminal-body {
+  padding: 20px;
+  height: 300px;
+  overflow-y: auto;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.95rem;
+  color: #a8b2d1;
+
+  /* Custom scrollbar for the terminal */
+  &::-webkit-scrollbar { width: 8px; }
+  &::-webkit-scrollbar-track { background: #0a192f; }
+  &::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+}
+
+.line {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  word-wrap: break-word;
+
+  &.command {
+    color: var(--accent-color);
+  }
+}
+
+/* --- The Input Area --- */
+.input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+
+  .prompt {
+    color: #27c93f; /* Authentic hacker green */
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    caret-color: var(--accent-color); /* Cyan blinking cursor */
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .terminal-body { font-size: 0.85rem; padding: 15px; }
+  .input-line .prompt { font-size: 0.85rem; }
+}

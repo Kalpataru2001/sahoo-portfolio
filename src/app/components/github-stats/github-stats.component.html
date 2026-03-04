@@ -1,0 +1,31 @@
+<section class="section-container" id="github-stats">
+  <h2 class="section-title" data-aos="fade-right"><span>06.</span> Live GitHub Stats</h2>
+
+  @if (isLoading()) {
+    <div class="loading-pulse">Establishing secure connection to GitHub...</div>
+  } 
+  
+  @if (!isLoading() && profileData(); as profile) {
+    <div class="github-card" data-aos="fade-up">
+      <img [src]="profile.avatar_url" alt="GitHub Avatar" class="avatar-img">
+      
+      <div class="card-content">
+        <h3 class="name">{{ profile.name || profile.login }}</h3>
+        <a [href]="profile.html_url" target="_blank" class="username">&#64;{{ profile.login }}</a>
+        
+        <p class="bio">{{ profile.bio || 'Fullstack Developer building scalable enterprise applications and creative web experiences.' }}</p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-num">{{ profile.public_repos }}</span>
+            <span class="stat-label">Repositories</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">{{ profile.followers }}</span>
+            <span class="stat-label">Followers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</section>

@@ -1,0 +1,36 @@
+<section class="section-container" id="terminal-section" data-aos="fade-up">
+  <h2 class="section-title"><span>05.</span> System Terminal</h2>
+
+  <div class="terminal-window" (click)="focusInput()">
+    
+    <div class="terminal-header">
+      <div class="buttons">
+        <span class="close"></span>
+        <span class="minimize"></span>
+        <span class="maximize"></span>
+      </div>
+      <div class="title">bash - guest&#64;sahoo-os</div>
+    </div>
+
+    <div class="terminal-body" #terminalBody>
+      
+      @for (line of history(); track $index) {
+        <div class="line" [class.command]="line.isCommand">
+          {{ line.text }}
+        </div>
+      }
+
+      <div class="input-line">
+        <span class="prompt">guest&#64;sahoo-os:~$</span>
+        <input 
+          type="text" 
+          #cmdInput 
+          autocomplete="off" 
+          spellcheck="false"
+          (keyup.enter)="processCommand(cmdInput.value); cmdInput.value = ''"
+          autofocus>
+      </div>
+
+    </div>
+  </div>
+</section>

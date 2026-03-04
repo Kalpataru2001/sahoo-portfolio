@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HobbiesComponent } from './components/hobbies/hobbies.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ScrollProgressComponent } from './components/scroll-progress/scroll-progress.component';
+import { GithubStatsComponent } from './components/github-stats/github-stats.component';
+import { TerminalComponent } from './components/terminal/terminal.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +30,9 @@ import { ScrollProgressComponent } from './components/scroll-progress/scroll-pro
     FooterComponent,
     HobbiesComponent,
     LoaderComponent,
-    ScrollProgressComponent
+    ScrollProgressComponent,
+    GithubStatsComponent,
+    TerminalComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

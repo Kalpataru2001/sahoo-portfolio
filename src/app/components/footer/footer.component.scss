@@ -1,4 +1,8 @@
 /* --- Footer Container --- */
+:host {
+  display: block;
+  width: 100%;
+}
 .footer-container {
   width: 100%;
   padding: 26px 0 20px 0;
@@ -6,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center; /* Added this to center text perfectly */
   gap: 20px;
   
   /* Creates a clean dark bar that covers the particles */
@@ -19,11 +24,13 @@
   margin-top: 80px;
 }
 
-/* --- Social Icons (Premium Circles) --- */
 .social-links {
   display: flex;
+  justify-content: center; /* Added this to center the icons perfectly */
+  align-items: center;
   gap: 25px;
   margin-bottom: 10px;
+  width: 100%; /* Added this */
 
   a {
     display: flex;
