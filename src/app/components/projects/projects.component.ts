@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
+import { TiltDirective } from '../../directives/tilt.directive';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TiltDirective],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })

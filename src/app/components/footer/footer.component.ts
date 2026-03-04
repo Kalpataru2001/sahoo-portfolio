@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -12,4 +12,15 @@ export class FooterComponent {
   
   githubUrl = 'https://github.com/Kalpataru2001?tab=repositories';
   linkedinUrl = 'https://www.linkedin.com/in/kalpatarusahoo';
+
+  showRocket = signal(false);
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showRocket.set(window.scrollY > 400);
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
